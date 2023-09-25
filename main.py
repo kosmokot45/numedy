@@ -1,9 +1,23 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import norm
 
-#x-axis ranges from -3 and 3 with .001 steps
-x = np.arange (-3, 3, 0.001)
+# Creating a series of data of in range of 1-50.
+x = np.linspace(1, 50, 200)
 
-#plot normal distribution with mean 0 and standard deviation 1
-plt.plot(x, norm.pdf(x, 0, 1))
+# Creating a Function.
+def normal_dist(x, mean, sd):
+    prob_density = (np.pi*sd) * np.exp(-0.5*((x-mean)/sd)**2)
+    return prob_density
+
+
+# Calculate mean and Standard deviation.
+mean = np.mean(x)
+sd = np.std(x)
+
+# Apply function to the data.
+pdf = normal_dist(x, mean, sd)
+
+# Plotting the Results
+plt.plot(x, pdf, color='red')
+plt.xlabel('Data points')
+plt.ylabel('Probability Density')
