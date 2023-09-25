@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "numedy-test"
+version = "0.1.0"
+description = "Test task which contains django web app for simple warehouse"
+authors = ["pohofmd <kosmokot45@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+django = "^4.2.5"
+numpy = "^1.26.0"
+matplotlib = "^3.8.0"
+scipy = "^1.11.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
